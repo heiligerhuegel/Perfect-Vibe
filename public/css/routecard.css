@@ -1,0 +1,45 @@
+:root {
+  --blue: #57607a;
+  --lightgrey: #57697a;
+  --darkgrey: #3d4955;
+  --white: #edf6ff;
+  --lightblue: #daedff;
+}
+
+.route-card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card-image {
+  width: 30%;
+  height: 100%;
+}
+
+.card-description {
+  width: 70%;
+  height: 100%;
+}
+
+.card-description-titles {
+  width: 100%;
+  height: 30%;
+}
+
+.card-description-county {
+  width: 100%;
+  height: 20%;
+}
+.card-description-length {
+  width: 100%;
+  height: 20%;
+}
+.card-description-user {
+  width: 100%;
+  height: 10%;
+}

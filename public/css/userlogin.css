@@ -1,0 +1,43 @@
+:root {
+  --blue: #57607a;
+  --lightgrey: #57697a;
+  --darkgrey: #3d4955;
+  --white: #edf6ff;
+  --lightblue: #daedff;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.logindiv {
+  border-bottom: 1px solid var(--lightblue);
+}
+
+.logindiv form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createAcc {
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

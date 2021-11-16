@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="./css/routecard.css" />
+
+<li>
+  <div class="SingleRoute">
+
+    <div class="route-card">
+      <div class="card-image">
+        <img src="{{this.image}}" alt="Picture of the route." />
+      </div>
+      {{! display image on left 50% }}
+      <div class="card-description">
+        <div class="card-description-title">
+          <h2>{{this.name}}</h2>
+        </div>
+        {{! display title  }}
+        <div class="card-description-county">
+          <p>{{this.text}}</p>
+        </div>
+        {{! display country }}
+        <div class="card-description-length">
+          <p>{{this.text}}</p>
+        </div>
+        {{! display length }}
+        <div class="card-description-user">
+          <p>{{this.text}}</p>
+        </div>
+        {{! display description by user }}
+        <a href="/route-id">See More</a>
+        {{! see more link to single page of route }}
+      </div>
+
+    </div>
+  </div>
+</li>

@@ -1,0 +1,70 @@
+:root {
+  --blue: #57607a;
+  --lightgrey: #57697a;
+  --darkgrey: #3d4955;
+  --white: #edf6ff;
+  --lightblue: #daedff;
+}
+
+.title {
+  width: 100%;
+  height: 30px;
+
+  padding: 10px 0px;
+
+  color: var(--lightblue);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title h2 {
+  width: 200px;
+  border-bottom: 1px solid var(--lightblue);
+  text-align: center;
+}
+.routes {
+  width: 100%;
+
+  border-bottom: 1px solid var(--lightblue);
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+  list-style-type: none;
+}
+
+.list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 40%;
+  height: 200px;
+
+  margin: 5px;
+  padding: 5px;
+
+  border: 1px solid var(--lightblue);
+}
+
+.SingleRoute {
+  width: 90%;
+  height: 90%;
+}

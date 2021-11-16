@@ -1,0 +1,77 @@
+:root {
+  --blue: #57607a;
+  --lightgrey: #57697a;
+  --darkgrey: #3d4955;
+  --white: #edf6ff;
+  --lightblue: #daedff;
+}
+
+.landing {
+  height: 700px;
+  width: 100%;
+
+  background-image: url("./../roadImage.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid var(--lightblue);
+}
+
+.title {
+  color: var(--darkgrey);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  height: 720px;
+  width: 100%;
+
+  background-color: var(--darkgrey);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid var(--lightblue);
+}
+
+.pics {
+  height: 90%;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--lightblue);
+}
+
+.pics img {
+  width: 100%;
+}
+
+.links {
+  height: 90%;
+  width: 50%;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section a {
+  margin: 10px 0px;
+}
