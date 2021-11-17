@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="./stylesheets/layout.css" />
     <title>Perfect Vibe</title>
   </head>
   <body>
@@ -13,13 +13,13 @@
       </div>
       <div class="nav">
         <ul>
-          <li><a href="/routes">Routes</a></li>
+          <li><a href="/roads">Routes</a></li>
           {{! link to rotes page }}
           {{! <li><a href="/route-id">Random</a></li> }}
           {{! id = Math.floor(Math.random()*Database.length) // or something like
           that }}
           <li><a href="/user-login"><img
-                src="./benutzersilhouette.png"
+                src="./images/benutzersilhouette.png"
                 alt="User Image"
               /></a></li>
           {{! link to user login page }}
@@ -27,15 +27,17 @@
         </ul>
       </div>
     </div>
+
     {{{body}}}
+
     <div class="footer">
       <ul>
-        <li><a href="/">Info</a></li>
+        {{!-- <li><a href="/">Info</a></li>
         {{! info stuff page }}
         <li><a href="/">Data</a></li>
         {{! data page stuff }}
         <li><a href="/">Details</a></li>
-        {{! details page stuff }}
+        {{! details page stuff }} --}}
       </ul>
     </div>
   </body>

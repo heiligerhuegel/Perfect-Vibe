@@ -1,65 +1,41 @@
-const express = require("express");
-const hbs = require("hbs");
-const mongoose = require("mongoose");
-const DB_ROUTES = "routes";
+// ℹ️ Gets access to environment variables/settings
+// https://www.npmjs.com/package/dotenv
+require("dotenv/config");
 
+// ℹ️ Connects to the database
+require("./db");
+
+// Handles http requests (express is node js framework)
+// https://www.npmjs.com/package/express
+const express = require("express");
+
+// Handles the handlebars
+// https://www.npmjs.com/package/hbs
+const hbs = require("hbs");
+hbs.registerPartials(__dirname + "/views/partials");
 const app = express();
 
-// SETUP VIEW ENGINE
-app.set("view engine", "hbs");
-// SETUP THE FOLDER WITH TEMPLATES
-app.set("views", __dirname + "/views");
+// ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
+require("./config")(app);
 
-// SET UP THE FOLDER FOR HBS PARTIALS
-hbs.registerPartials(__dirname + "/views/partials");
+// default value for title local
+const projectName = "perfectvibe";
+const capitalized = (string) =>
+  string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-// MIDDLEWARE
-app.use(express.static("public"));
+app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 
-// Routes
-// GET /
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// 👇 Start handling routes here
+const index = require("./routes/index");
+app.use("/", index);
 
-app.get("/routes", (req, res) => {
-  res.render("routes");
-});
+const road = require("./routes/roads");
+app.use("/", road);
 
-app.get("/route-:id", (req, res) => {
-  const id = req.params.id;
-  //const mapboxdata = from database
-  res.render("route-id" /*{mapboxdata}*/);
-});
+const user = require("./routes/user");
+app.use("/", user);
 
-// lets create all the routes in be beginning by hand and add this panel if everything works
-// app.get("/route-:id-panel", (req, res) => {
-//   const id = req.params.id;
-//   res.render("route-id-panel");
-// });
+// ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
+require("./error-handling")(app);
 
-// create account on the same page as login
-app.get("/user-login", (req, res) => {
-  res.render("user-login");
-});
-
-// user panel as bonus to change data about the user
-// app.get("/user-:id-panel", (req, res) => {
-//   const id = req.params.id;
-//   res.render("user-id-panel");
-// });
-
-// can be the same as the use login panel
-// app.get("/admin-login", (req, res) => {
-//   res.render("admin-login");
-// });
-
-// also bonus
-// app.get("/admin-panel", (req, res) => {
-//   res.render("admin-panel");
-// });
-
-// Start the server
-app.listen(3000, () => {
-  console.log(`Server is running on port 3000`);
-});
+module.exports = app;
