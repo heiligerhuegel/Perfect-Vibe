@@ -33,4 +33,10 @@ Users can request validation of times by uploading pictures.
 
   - pictures
 
+<<<<<<< HEAD
+=======
+    
+
+
+>>>>>>> 20202313403c6eccf128fc4b7d3789b45a08d581
 Admins can validate by checking pictures
