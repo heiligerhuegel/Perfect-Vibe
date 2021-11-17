@@ -1,9 +1,7 @@
 const router = require("express").Router();
 
 // create account on the same page as login
-router.get("/user-login", (req, res) => {
-  res.render("user-login");
-});
+
 
 // user panel as bonus to change data about the user
 // router.get("/user/:id/panel", (req, res) => {

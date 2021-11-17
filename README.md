@@ -10,33 +10,18 @@ Databases:
 
 Build
 
-- Landingpage
+- Landingpage ( done)
 
-  - link to list , single route , random
+  - link to list , login/signup , (random)
+- List of Routes (done )
 
-- List of Routes
+  - Image,Name,length, country 
+- Single Route
 
-  - Single Route
-    - map
-    - // leaderboard
-    - Users can upload pictres from route
-
-- request random route
-
-  - as on route
+  - Mapbox top, desctiption middle, pictures bottom
+- Loginpage 
+- Create Account Page
+- Userpanel to Create Road
+- Adminpanel to accept Roads
 
 NoneUsers can only browse routes
-
-Users can request validation of times by uploading pictures.
-
-- add route and bonus validation field
-
-  - pictures
-
-<<<<<<< HEAD
-=======
-    
-
-
->>>>>>> 20202313403c6eccf128fc4b7d3789b45a08d581
-Admins can validate by checking pictures

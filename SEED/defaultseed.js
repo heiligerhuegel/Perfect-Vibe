@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Road = require("./../models/road.schema");
+const Road = require("./../models/road.model");
 
 const roads = [
   {
@@ -50,17 +50,17 @@ const roads = [
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log("Connected to the database!");
+    //console.log("Connected to the database!");
     // 2. Drop the DB
     return mongoose.connection.db.dropDatabase();
   })
   .then(() => {
-    console.log("Database dropped!");
+    //console.log("Database dropped!");
     return Road.create(roads);
     // forwards the promise to the next `then`
   })
   .then((data) => {
-    console.log(`Inserted ${data.length} books`); // Inserted 10 books
+    console.log(`Inserted ${data.length} roads`); // Inserted 10 books
     return mongoose.connection.close();
   })
   .then(() => {
