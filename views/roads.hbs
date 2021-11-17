@@ -7,14 +7,11 @@
   </div>
 
   <div class="list">
-    <ul>
-
-      {{#each Road}}
-        {{> roadcard}}
+    <div class="SingleRoad">
+      {{#each roadsFromDB}}
+        {{> roadcard this}}
       {{/each}}
-
-    </ul>
-
+      </div>
   </div>
 
 </div>

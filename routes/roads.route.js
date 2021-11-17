@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const Road = require("./../models/road.model");
 
-router.get("/roads", (req, res) => {
-  res.render("roads", { Road });
+router.get("/roads", async (req, res) => {
+  const roadsFromDB = await Road.find()
+  res.render("roads", { roadsFromDB });
 });
 
 router.get("/road/:id", (req, res) => {

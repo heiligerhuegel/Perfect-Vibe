@@ -23,7 +23,7 @@
   border-bottom: 1px solid var(--lightblue);
 }
 
-.title {
+.landing-title {
   color: var(--darkgrey);
 
   display: flex;
@@ -32,7 +32,7 @@
   align-items: center;
 }
 
-.section {
+.landing-section {
   height: 720px;
   width: 100%;
 
@@ -46,7 +46,7 @@
   border-bottom: 1px solid var(--lightblue);
 }
 
-.pics {
+.landing-section-pics {
   height: 90%;
   width: 50%;
   padding: 10px;
@@ -57,11 +57,11 @@
   border-right: 1px solid var(--lightblue);
 }
 
-.pics img {
+.landing-section-pics img {
   width: 100%;
 }
 
-.links {
+.landing-section-links {
   height: 90%;
   width: 50%;
   padding: 10px;
@@ -72,6 +72,6 @@
   align-items: center;
 }
 
-.section a {
+.landing-section-section a {
   margin: 10px 0px;
 }

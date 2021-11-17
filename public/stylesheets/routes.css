@@ -27,44 +27,42 @@
 }
 .routes {
   width: 100%;
-
   border-bottom: 1px solid var(--lightblue);
 }
 
 .list {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.list ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
-
   width: 100%;
-  list-style-type: none;
+}
+.SingleRoad {
+  width: 70%;
 }
 
-.list li {
+.route-card {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-
-  width: 40%;
-  height: 200px;
 
   margin: 5px;
-  padding: 5px;
-
   border: 1px solid var(--lightblue);
+  height: 200px;
+}
+.card-image {
+  height: 100%;
+  width: 45%;
 }
 
-.SingleRoute {
-  width: 90%;
-  height: 90%;
+.card-image img {
+  height: 100%;
+}
+.card-image img {
+  height: 100%;
+}
+.card-description {
+  width: 50%;
+  height: 100%;
 }

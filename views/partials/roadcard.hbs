@@ -1,34 +1,31 @@
-<link rel="stylesheet" href="./stylesheet/routecard.css" />
+<link rel="stylesheet" href="./stylesheets/routecard.css" />
 
-<li>
-  <div class="SingleRoute">
-
-    <div class="route-card">
-      <div class="card-image">
-        <img src="{{this.image}}" alt="Picture of the route." />
-      </div>
-      {{! display image on left 50% }}
-      <div class="card-description">
-        <div class="card-description-title">
-          <h2>{{this.name}}</h2>
-        </div>
-        {{! display title  }}
-        <div class="card-description-county">
-          <p>{{this.description}}</p>
-        </div>
-        {{! display country }}
-        <div class="card-description-length">
-          <p>{{this.country}}</p>
-        </div>
-        {{! display length }}
-        <div class="card-description-user">
-          <p>{{this.user}}</p>
-        </div>
-        {{! display description by user }}
-        <a href="/route-id">See More</a>
-        {{! see more link to single page of route }}
-      </div>
-
-    </div>
+<div class="route-card">
+  <div class="card-image">
+    <img src="./images/IMG_9678.JPG" alt="Penisbild" />
   </div>
-</li>
+  {{! display image on left 50% }}
+  <div class="card-description">
+    <div class="card-description-title">
+      <h2>{{this.name}}</h2>
+    </div>
+    {{! display title  }}
+    <div class="card-description-county">
+      <p>{{this.description}}</p>
+    </div>
+    {{! display country }}
+    <div class="card-description-length">
+      <p>In: {{this.country}}</p>
+    </div>
+    {{! display length }}
+    <div class="card-description-user">
+      <p>By User: {{this.user}}</p>
+    </div>
+    {{! display description by user }}
+    <div class="card-description-link">
+      <a href="/route/{{this.is}}">See More</a>
+    </div>
+    {{! see more link to single page of route }}
+  </div>
+
+</div>
