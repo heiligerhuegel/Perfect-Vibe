@@ -6,7 +6,7 @@ Databases:
 
 - Database of Users ( name , login, uploaded routes , )
 - Database of Admin (name, login)
-- Database of Routes ( staring point, end point, middle pintS, avg time, ref leaderboard)
+- Database of Routes ( staring point, end point, middle pintS, avg time,)
 
 Build
 
