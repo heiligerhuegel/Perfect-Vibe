@@ -1,15 +1,20 @@
 const User = require("./../models/User.model");
 const isLoggedIn = require("./../middleware/isLoggedIn");
+const setAuthFlag = require("./../middleware/setAuthFlag")
 const router = require("express").Router();
 
 // create account on the same page as login
 
 
-router.get("/:id", isLoggedIn, (req, res) => {
+router.get("/:id", isLoggedIn, setAuthFlag, (req, res) => {
     const userId = req.params.id
     User.findById(userId)
         .then((user) => {
-            res.render('user/user-panel', {user})
+            data = {
+                user: req.user,
+                userData: user
+            }
+            res.render('user/user-panel', data)
         })
         .catch((err) => {
             console.log(err)
