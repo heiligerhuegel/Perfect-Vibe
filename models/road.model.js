@@ -9,7 +9,7 @@ const roadSchema = new Schema({
   country: { type: String, required: true },
   length: { type: Number, required: true },
   image: [],
-  waypoints: [[]],
+  waypoints: [[{ type: Number }, { type: Number }]],
 });
 
 const Road = mongoose.model("Road", roadSchema);

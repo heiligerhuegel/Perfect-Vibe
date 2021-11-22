@@ -36,6 +36,7 @@
   mapboxgl.accessToken =
   "pk.eyJ1IjoiaGVpbGlnZXJodWVnZWwiLCJhIjoiY2t3YXh5Y2l1MXk1dTJ3cWxlMTZvZ2FqdCJ9.yck0GJzLuAQfrYHahudOdA";
   const map = new mapboxgl.Map({ container: 'map', style:
-  'mapbox://styles/mapbox/streets-v11', center: [-74.5, 40], zoom: 9 });
-  map.addControl(directions, "top-left");
+  'mapbox://styles/mapbox/streets-v11', center: [({{road.waypoints.[0].[1]}}+{{road.waypoints.[1].[1]}})/2,({{road.waypoints.[0].[0]}}+{{road.waypoints.[1].[0]}})/2],
+  zoom: 8 });
+
 </script>

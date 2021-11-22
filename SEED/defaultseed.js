@@ -5,7 +5,7 @@ const Road = require("./../models/road.model");
 const roads = [
   {
     userID: "619b7d5a179a75c24b883f0e",
-    user: "heiligerhuegel",
+    userName: "heiligerhuegel",
     name: "90 Mile Streight",
     description: "Longest streight street in Australia",
     country: "Australia",
@@ -19,7 +19,7 @@ const roads = [
 
   {
     userID: "619b7d5a179a75c24b883f0e",
-    user: "heiligerhuegel",
+    userName: "heiligerhuegel",
     name: "Alice Springs Kings Canyopn",
     description: "From the middle of nowhere to the middle of nowhere!",
     country: "Australia",
@@ -33,7 +33,7 @@ const roads = [
 
   {
     userID: "619b7d5a179a75c24b883f0e",
-    user: "heiligerhuegel",
+    userName: "heiligerhuegel",
     name: "Holzgerlingen to Lake Konstanz",
     description:
       "From Holzgerlingen to the Lake Konstanz on the Autobahn with a lot of Unlimited speed areas.",
@@ -69,3 +69,5 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+//[({{road.waypoints[0][0]}}+{{road.waypoints[1][0]}})/2,({{road.waypoints[0][1]}}+{{road.waypoints[1][1]}})/2]
