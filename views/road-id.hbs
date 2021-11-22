@@ -1,13 +1,23 @@
+<link rel="stylesheet" href="../stylesheets/road-id.css" />
+
 <div class="routeId">
 
   <div class="routeIdSectionOne">
     <div class="RouteIdMap">
+
       <div id="map"></div>
       {{! mapbox of road on top 100% width }}
     </div>
 
     <div class="routeIdDescription">
       {{! description of road: name, length, distance, and stuff below map }}
+      <h2>{{road.name}}</h2>
+      by
+      <h3>{{road.user}}</h3>
+      <h3>{{road.country}}</h3>
+      <h3>{{road.length}}</h3>
+      <p>{{road.description}}</p>
+
     </div>
 
     <div class="routeIdPictures">

@@ -2,21 +2,23 @@ const router = require("express").Router();
 const Road = require("./../models/road.model");
 
 router.get("/roads", async (req, res) => {
-  const roadsFromDB = await Road.find()
+  const roadsFromDB = await Road.find();
   res.render("roads", { roadsFromDB });
 });
 
 router.get("/road/:id", (req, res) => {
   const id = req.params.id;
+
   Road.findById(id).then((road) => {
+    console.log(road);
     res.render("road-id", { road });
   });
 });
 
 // lets create all the routes in be beginning by hand and add this panel if everything works
-// router.get("/road/:id/panel", (req, res) => {
+// router.get("/road/:id/edit", (req, res) => {
 //   const id = req.params.id;
-//   res.render("route/id/panel");
+//   res.render("route/id/edit");
 // });
 
 module.exports = router;
