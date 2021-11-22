@@ -6,13 +6,16 @@
     <h1>Login:</h1>
     <form action="/login" method="post">
       <label>Username:</label>
-      <input type="text" />
+      <input type="text" name="username" placeholder="Your username" />
       <label>Password:</label>
-      <input type="password" />
+      <input type="password" name="password"  />
       <button>Login</button>
     </form>
     <br />
-    <a href="/signup">Signup</a>
+    <a href="/signup">Sign Up</a>
   </div>
 
+  {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
 </div>

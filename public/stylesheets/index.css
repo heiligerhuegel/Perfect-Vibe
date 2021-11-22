@@ -7,7 +7,7 @@
 }
 
 .landing {
-  height: 700px;
+  height: calc(100vh - 41px);
   width: 100%;
 
   background-image: url("./../images/roadImage.png");
@@ -33,16 +33,13 @@
 }
 
 .landing-section {
-  height: 720px;
+  height: calc(100vh - 35px);
   width: 100%;
-
   background-color: var(--darkgrey);
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   border-bottom: 1px solid var(--lightblue);
 }
 
@@ -75,3 +72,10 @@
 .landing-section-section a {
   margin: 10px 0px;
 }
+
+a img {
+  width: 26px;
+  height: 26px;
+}
+
+

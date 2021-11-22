@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv/config');
 const mongoose = require("mongoose");
 const Road = require("./../models/road.model");
 

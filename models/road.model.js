@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const roadSchema = new Schema({
-  user: { type: String },
+  user: { type: Schema.Types.ObjectId, ref: "User" },
+  userName : {type: String},
   name: { type: String, required: true },
   description: { type: String, required: true },
   country: { type: String, required: true },

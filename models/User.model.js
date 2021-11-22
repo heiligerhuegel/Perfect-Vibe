@@ -6,8 +6,12 @@ const userSchema = new Schema(
     username: {
       type: String,
       unique: true, //-> Ideally, should be unique, but its up to you
+      required: true
     },
-    password: { type: String },
+    password: { type: String, required: true },
+    routes: [
+      { type: Schema.Types.ObjectId, ref: "Road" }
+    ]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

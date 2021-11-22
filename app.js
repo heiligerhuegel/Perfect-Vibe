@@ -32,7 +32,7 @@ app.use("/", index);
 const road = require("./routes/roads.route");
 app.use("/", road);
 
-const login = require("./routes/login.route");
+const login = require("./routes/auth.route");
 app.use("/", login);
 
 const user = require("./routes/user.route");
