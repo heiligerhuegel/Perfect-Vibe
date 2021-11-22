@@ -2,6 +2,8 @@ const User = require("./../models/User.model");
 const isLoggedIn = require("./../middleware/isLoggedIn");
 const setAuthFlag = require("./../middleware/setAuthFlag")
 const router = require("express").Router();
+const axios = require('axios');
+
 
 // create account on the same page as login
 
@@ -21,6 +23,22 @@ router.get("/:id", isLoggedIn, setAuthFlag, (req, res) => {
         })
   });
 
+
+// router.post("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
+
+//     // User.findById(userId)
+//     //     .then((user) => {
+//     //         data = {
+//     //             user: req.user,
+//     //             userData: user
+//     //         }
+//     //         res.render('user/user-panel', data)        
+//     // })
+//     // .catch((err) => {
+//     //     console.log(err)
+//     // })
+
+//   });
 // user panel as bonus to change data about the user
 // router.get("/user/:id/panel", (req, res) => {
 //   const id = req.params.id;

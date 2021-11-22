@@ -28,14 +28,14 @@
           {{! id = Math.floor(Math.random()*Database.length) // or something like
           that }}
           {{#if user.isLoggedIn}}
-            <li><a href="/{{user.userId}}"><img
-                  src="./images/benutzersilhouette.png"
-                  alt="User Image"
-                /></a></li>
-            <li><a href="/logout"><img
-                  src="./images/logout.png"
-                  alt="Log out"
-                /></a></li>
+          <li><a href="/{{user.userId}}"><img
+                src="./images/benutzersilhouette.png"
+                alt="User Image"
+              /></a></li>
+          <li><a href="/logout"><img
+                src="./images/logout.png"
+                alt="Log out"
+              /></a></li>
           {{else}}
             <li>
               <a href="/login">
