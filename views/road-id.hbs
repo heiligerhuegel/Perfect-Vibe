@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../stylesheets/road-id.css" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
 
 <div class="routeId">
 
@@ -12,10 +13,9 @@
     <div class="routeIdDescription">
       {{! description of road: name, length, distance, and stuff below map }}
       <h2>{{road.name}}</h2>
-      by
-      <h3>{{road.user}}</h3>
+      <h3>by {{road.user}}</h3>
       <h3>{{road.country}}</h3>
-      <h3>{{road.length}}</h3>
+      <h3>{{road.length}} km</h3>
       <p>{{road.description}}</p>
 
     </div>
@@ -26,3 +26,10 @@
 
   </div>
 </div>
+
+<script>
+  mapboxgl.accessToken =
+  "pk.eyJ1IjoiaGVpbGlnZXJodWVnZWwiLCJhIjoiY2t2d2dmNXJyMDd3MzJ1cWkwajBtdW5vaSJ9.tMlXeOyESPxI3ZBVdxlYoA";
+  Map = new mapboxgl.Map({ container: "map", style:
+  "mapbox://styles/mapbox/streets-v11", zoom: 9, });
+</script>

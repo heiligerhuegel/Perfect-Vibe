@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./stylesheets/layout.css" />
     <link rel="stylesheet" href="../stylesheets/layout.css" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"
+    ></script>
     <title>Perfect Vibe</title>
+
   </head>
   <body>
     <div class="navbar">
@@ -19,9 +27,8 @@
           <li><a href="/route-id">Random</a></li>
           {{! id = Math.floor(Math.random()*Database.length) // or something like
           that }}
-<<<<<<< HEAD
-          {{#if userIsLoggedIn}}
-            <li><a href="/{{userId}}"><img
+          {{#if user.isLoggedIn}}
+            <li><a href="/{{user.userId}}"><img
                   src="./images/benutzersilhouette.png"
                   alt="User Image"
                 /></a></li>
@@ -29,17 +36,6 @@
                   src="./images/logout.png"
                   alt="Log out"
                 /></a></li>
-=======
-          {{#if user.isLoggedIn}}
-          <li><a href="/{{user.userId}}"><img
-                src="./images/benutzersilhouette.png"
-                alt="User Image"
-              /></a></li>
-          <li><a href="/logout"><img
-                src="./images/logout.png"
-                alt="Log out"
-              /></a></li>
->>>>>>> 640ae8b940b688cbc339a13cc3755e382427aa69
           {{else}}
             <li>
               <a href="/login">
