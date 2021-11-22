@@ -14,14 +14,17 @@
     <div class="landing-section-pics">
       <img src="./images/IMG_9678.JPG" alt="" />
     </div>
-
     <div class="landing-section-links">
-      <a href="/signup"><h2>Create Account</h2></a>
-      {{! link to create account page }}
+      {{#if user.isLoggedIn}}
+        <a href="createroute"><h2>Create your own route.</h2></a>
+        {{! link to create route if logged in }}
+      {{else}}
+         <a href="/signup"><h2>Create Account</h2></a>
+      {{/if}}
+        <a href="/roads"><h2>Show routes.</h2></a>
+        {{! link to create account page }}
 
-      <a href="/login"><h2>Create your own route.</h2></a>
-      {{! link to create route if logged in }}
-      <a href="/roads"><h2>Show routes.</h2></a>
+
       {{! link to routes }}
 
       {{! <a href="/"><h2>Find a random route.</h2></a> }}

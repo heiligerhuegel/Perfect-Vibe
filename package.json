@@ -7,6 +7,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.5",
@@ -14,6 +15,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "hbs": "^4.1.2",
+    "mapbox-gl": "^2.6.1",
     "mongoose": "^6.0.13",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0",
