@@ -19,17 +19,6 @@
           <li><a href="/route-id">Random</a></li>
           {{! id = Math.floor(Math.random()*Database.length) // or something like
           that }}
-<<<<<<< HEAD
-          {{#if userIsLoggedIn}}
-            <li><a href="/{{userId}}"><img
-                  src="./images/benutzersilhouette.png"
-                  alt="User Image"
-                /></a></li>
-            <li><a href="/logout"><img
-                  src="./images/logout.png"
-                  alt="Log out"
-                /></a></li>
-=======
           {{#if user.isLoggedIn}}
           <li><a href="/{{user.userId}}"><img
                 src="./images/benutzersilhouette.png"
@@ -39,7 +28,6 @@
                 src="./images/logout.png"
                 alt="Log out"
               /></a></li>
->>>>>>> 640ae8b940b688cbc339a13cc3755e382427aa69
           {{else}}
             <li>
               <a href="/login">
