@@ -12,13 +12,30 @@
   href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
   type="text/css"
 />
-
+<div style="display: flex; justify-content: center; padding: 50px; gap: 150px">
 <div id="map" style="width: 800px; height: 800px;"></div>
+
+
+<form style="display: flex; flex-direction:column;" action="/createroute">
+<label for="name">Route Name:</label>
+<input name="name" required type="text">
+<label for="description">Description:</label>
+<input name="descripiton" required type="text">
+<label for="distance" >Distance(Km):</label>
+<input readonly type="text" name="distance" id="distance">
+<label for="duration">Duration(Minutes):</label>
+<input readonly type="text" name="duration" id="duration">
+<label for="start">Start-Coordinates:</label>
+<input readonly type="text" name="start" id="start">
+<label for="end">End-Coordinates:</label>
+<input readonly type="text" name="end" id="end">
+</form>
+
+</div>
 
 <script>
 mapboxgl.accessToken =
     'pk.eyJ1IjoiaGVpbGlnZXJodWVnZWwiLCJhIjoiY2t3YXh5Y2l1MXk1dTJ3cWxlMTZvZ2FqdCJ9.yck0GJzLuAQfrYHahudOdA';
-
 const map = new mapboxgl.Map({
     container: 'map',
     style: "mapbox://styles/heiligerhuegel/ckvwgwlvq4wrj14m37krtmygg",
@@ -37,7 +54,21 @@ const directions = new MapboxDirections({
 map.addControl(directions, 'top-left');
 map.on("load", () => {
     directions.on("route", (event) => {
-        console.log(event)
+        let distance = Math.round(Number(event.route[0].distance) / 1000)
+
+        let distanceInput = document.getElementById("distance")
+        distanceInput.setAttribute("value", distance)
+        
+        let duration = Math.round(Number(event.route[0].duration) / 60)
+        let durationInput = document.getElementById("duration")
+        durationInput.setAttribute("value", duration)
+
+        let startInput = document.getElementById("start")
+        startInput.setAttribute("value", event.route[0].legs[0].steps[0].maneuver.location)
+
+        let endInput = document.getElementById("end")
+        endInput.setAttribute("value", event.route[0].legs[0].steps[event.route[0].legs[0].steps.length-1].maneuver.location)
+        
     })
 })
 </script>
@@ -46,5 +77,5 @@ map.on("load", () => {
 
 {{!  event.route[0].distance(meters)
 event.route[0].duration (seconds)
-event.route.0.legs.0.steps[0].maneuver.location
+event.route[0].legs[0].steps[0].maneuver.location
 event.route[0].legs[0].steps[event.route[0].legs[0].steps.length-1].maneuver.location}} 

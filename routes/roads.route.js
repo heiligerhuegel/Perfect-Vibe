@@ -27,7 +27,6 @@ router.get("/road/:id", (req, res) => {
 });
 
 router.get("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
-
   res.render('create-route')
 })
 
