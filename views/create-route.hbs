@@ -16,7 +16,7 @@
 <div id="map" style="width: 800px; height: 800px;"></div>
 
 
-<form style="display: flex; flex-direction:column;" action="/createroute">
+<form style="display: flex; flex-direction:column;" action="/createroute" method="POST">
 <label for="name">Route Name:</label>
 <input name="name" required type="text">
 <label for="description">Description:</label>
@@ -29,6 +29,8 @@
 <input readonly type="text" name="start" id="start">
 <label for="end">End-Coordinates:</label>
 <input readonly type="text" name="end" id="end">
+
+<button type="submit">Submit</button>
 </form>
 
 </div>

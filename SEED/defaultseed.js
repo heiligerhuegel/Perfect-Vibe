@@ -9,7 +9,7 @@ const roads = [
     name: "90 Mile Streight",
     description: "Longest streight street in Australia",
     country: "Australia",
-    length: 146.6,
+    distance: 146.6,
     image: [],
     waypoints: [
       [-32.26998990587195, 125.48335971305639],
@@ -23,7 +23,7 @@ const roads = [
     name: "Alice Springs Kings Canyopn",
     description: "From the middle of nowhere to the middle of nowhere!",
     country: "Australia",
-    length: 328,
+    distance: 328,
     image: [],
     waypoints: [
       [-23.701653902541953, 133.84850435003835],
@@ -38,7 +38,7 @@ const roads = [
     description:
       "From Holzgerlingen to the Lake Konstanz on the Autobahn with a lot of Unlimited speed areas.",
     country: "Germany",
-    length: 128,
+    distance: 128,
     image: [],
     waypoints: [
       [48.63421962166325, 9.017891034367839],

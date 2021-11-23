@@ -18,9 +18,10 @@
     <div class="routeIdDescription">
       {{! description of road: name, length, distance, and stuff below map }}
       <h2>{{road.name}}</h2>
-      <h3>by {{road.user}}</h3>
+      <h3>by {{road.userName}}</h3>
       <h3>{{road.country}}</h3>
       <h3>{{road.length}} km</h3>
+      <h3>{{road.duration}} minutes</h3>
       <p>{{road.description}}</p>
 
     </div>
@@ -38,9 +39,10 @@
 
   const map = new mapboxgl.Map({ 
     container: 'map',
-    style:'mapbox://styles/mapbox/streets-v11',
+    style: "mapbox://styles/heiligerhuegel/ckvwgwlvq4wrj14m37krtmygg",
+    //style:'mapbox://styles/mapbox/streets-v11',
     center: [({{road.waypoints.[0].[1]}}+{{road.waypoints.[1].[1]}})/2,({{road.waypoints.[0].[0]}}+{{road.waypoints.[1].[0]}})/2], // starting position
-    zoom: 6
+    zoom: 5
 });
 
 
