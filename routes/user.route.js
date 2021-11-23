@@ -1,5 +1,5 @@
 const User = require("./../models/User.model");
-const isLoggedIn = require("./../middleware/isLoggedIn");
+const isLoggedIn = require("../middleware/isLoggedIn");
 const setAuthFlag = require("./../middleware/setAuthFlag")
 const router = require("express").Router();
 const axios = require('axios');

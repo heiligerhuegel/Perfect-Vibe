@@ -1,10 +1,9 @@
 const router = require("express").Router();
 const Road = require("./../models/road.model");
 const token = process.env.MAPBOX_TOKEN;
-const isLoggedIn = require("./../middleware/isLoggedIn");
+const isLoggedIn = require("../middleware/isLoggedIn");
 const setAuthFlag = require("./../middleware/setAuthFlag")
-const axios = require('axios');
-
+const fileUploader = require('./../config/cloudinary.config');
 
 
 
@@ -35,7 +34,7 @@ router.get("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
   res.render('create-route')
 })
 
-router.post("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
+router.post("/createroute", isLoggedIn, setAuthFlag, fileUploader.single('roadImage'), (req, res) => {
   console.log(req.body)
   let waypoint1 = []
   let waypoint2 = []
@@ -54,9 +53,11 @@ router.post("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
   let length = Number(req.body.distance)
   let duration = Number(req.body.duration)
   waypoints.push(waypoint1, waypoint2)
-
-  Road.create({ userId, userName, name, description, length, duration})
+  console.log(req.body.roadImage)
+  console.log(req.file)
+  Road.create({ userId, userName, name, description, length, duration, imageUrl: req.file.path})
   .then((createdRoot) => {
+    console.log(createdRoot);
       return Road.findByIdAndUpdate(createdRoot._id, { $push: { waypoints: { $each: waypoints  } }})    
   })
   .then((road) => {
