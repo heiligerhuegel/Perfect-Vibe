@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const isLoggedIn = require("./middleware/isLoggedIn");
-const setAuthFlag = require("./middleware/setAuthFlag")
+const isLoggedIn = require("../middleware/isLoggedIn");
+const setAuthFlag = require("../middleware/setAuthFlag")
 
 
 /* GET home page */
