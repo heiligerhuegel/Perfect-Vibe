@@ -1,22 +1,22 @@
 const router = require("express").Router();
-const isLoggedIn = require("../middleware/isLoggedIn");
-const setAuthFlag = require("../middleware/setAuthFlag")
+const isloggedin = require("../middleware/isloggedin");
+const setauthflag = require("../middleware/setauthflag")
 
 
 /* GET home page */
-router.get("/", setAuthFlag, (req, res, next) => {
+router.get("/", setauthflag, (req, res, next) => {
   let data
   // Check if the incoming request has a valid cookie/session
-  let userIsLoggedIn = false;
+  let userisloggedin = false;
   // if (req.session.user) {
-  //   userIsLoggedIn = true;
+  //   userisloggedin = true;
   //   data = {
-  //     userIsLoggedIn: userIsLoggedIn,
+  //     userisloggedin: userisloggedin,
   //     userId: req.session.user._id
   //   }
   // }else{
   //   data = {
-  //     userIsLoggedIn: userIsLoggedIn,
+  //     userisloggedin: userisloggedin,
   //   }
   // }
 
@@ -25,9 +25,9 @@ router.get("/", setAuthFlag, (req, res, next) => {
 });
 
 // GET /secret
-// We use the isLoggedIn middleware to protect the route
+// We use the isloggedin middleware to protect the route
 
-router.get("/secret", isLoggedIn, (req, res, next) => {
+router.get("/secret", isloggedin, (req, res, next) => {
   res.render("secret-view");
 });
 

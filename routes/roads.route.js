@@ -1,14 +1,14 @@
 const router = require("express").Router();
 const Road = require("./../models/road.model");
 const token = process.env.MAPBOX_TOKEN;
-const isLoggedIn = require("../middleware/isLoggedIn");
-const setAuthFlag = require("../middleware/setAuthFlag")
+const isloggedin = require("../middleware/isloggedin");
+const setauthflag = require("../middleware/setauthflag")
 const axios = require('axios');
 
 
 
 
-router.get("/roads", setAuthFlag, async (req, res) => {
+router.get("/roads", setauthflag, async (req, res) => {
   const roadsFromDB = await Road.find();
   data = {
     user: req.user,
@@ -17,7 +17,7 @@ router.get("/roads", setAuthFlag, async (req, res) => {
   res.render("roads", data );
 });
 
-router.get("/road/:id", setAuthFlag, (req, res) => {
+router.get("/road/:id", setauthflag, (req, res) => {
   const id = req.params.id;
 
   Road.findById(id).then((road) => {
@@ -31,11 +31,11 @@ router.get("/road/:id", setAuthFlag, (req, res) => {
   });
 });
 
-router.get("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
+router.get("/createroute", isloggedin, setauthflag, (req, res) => {
   res.render('create-route')
 })
 
-router.post("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
+router.post("/createroute", isloggedin, setauthflag, (req, res) => {
   console.log(req.body)
   let waypoint1 = []
   let waypoint2 = []
