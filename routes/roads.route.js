@@ -34,7 +34,7 @@ router.get("/createroute", isloggedin, setauthflag, (req, res) => {
   res.render('create-route', {user: req.user} )
 })
 
-router.post("/createroute", isLoggedIn, setAuthFlag, fileUploader.single('roadImage'), (req, res) => {
+router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadImage'), (req, res) => {
   console.log(req.body)
   let waypoint1 = []
   let waypoint2 = []

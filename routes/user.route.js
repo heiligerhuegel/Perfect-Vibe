@@ -1,11 +1,6 @@
 const User = require("./../models/User.model");
-<<<<<<< HEAD
-const isLoggedIn = require("../middleware/isLoggedIn");
-const setAuthFlag = require("./../middleware/setAuthFlag")
-=======
 const isloggedin = require("./../middleware/isloggedin");
 const setauthflag = require("./../middleware/setauthflag")
->>>>>>> eea8deda8c32355b80862b541db1ba6e48d7748d
 const router = require("express").Router();
 const axios = require('axios');
 
