@@ -1,6 +1,11 @@
 const User = require("./../models/User.model");
+<<<<<<< HEAD
 const isLoggedIn = require("../middleware/isLoggedIn");
 const setAuthFlag = require("./../middleware/setAuthFlag")
+=======
+const isloggedin = require("./../middleware/isloggedin");
+const setauthflag = require("./../middleware/setauthflag")
+>>>>>>> eea8deda8c32355b80862b541db1ba6e48d7748d
 const router = require("express").Router();
 const axios = require('axios');
 
@@ -8,7 +13,7 @@ const axios = require('axios');
 // create account on the same page as login
 
 
-router.get("/:id", isLoggedIn, setAuthFlag, (req, res) => {
+router.get("/:id", isloggedin, setauthflag, (req, res) => {
     const userId = req.params.id
     User.findById(userId)
         .then((user) => {
@@ -26,7 +31,7 @@ router.get("/:id", isLoggedIn, setAuthFlag, (req, res) => {
 
 
 
-// router.post("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
+// router.post("/createroute", isloggedin, setauthflag, (req, res) => {
 
 //     // User.findById(userId)
 //     //     .then((user) => {

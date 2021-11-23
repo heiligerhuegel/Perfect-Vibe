@@ -1,13 +1,20 @@
 const router = require("express").Router();
 const Road = require("./../models/road.model");
 const token = process.env.MAPBOX_TOKEN;
+<<<<<<< HEAD
 const isLoggedIn = require("../middleware/isLoggedIn");
 const setAuthFlag = require("./../middleware/setAuthFlag")
 const fileUploader = require('./../config/cloudinary.config');
+=======
+const isloggedin = require("./../middleware/isloggedin");
+const setauthflag = require("./../middleware/setauthflag")
+const axios = require('axios');
+
+>>>>>>> eea8deda8c32355b80862b541db1ba6e48d7748d
 
 
 
-router.get("/roads", setAuthFlag, async (req, res) => {
+router.get("/roads", setauthflag, async (req, res) => {
   const roadsFromDB = await Road.find();
   data = {
     user: req.user,
@@ -16,7 +23,7 @@ router.get("/roads", setAuthFlag, async (req, res) => {
   res.render("roads", data );
 });
 
-router.get("/road/:id", setAuthFlag, (req, res) => {
+router.get("/road/:id", setauthflag, (req, res) => {
   const id = req.params.id;
 
   Road.findById(id).then((road) => {
@@ -30,11 +37,15 @@ router.get("/road/:id", setAuthFlag, (req, res) => {
   });
 });
 
-router.get("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
-  res.render('create-route')
+router.get("/createroute", isloggedin, setauthflag, (req, res) => {
+  res.render('create-route', {user: req.user} )
 })
 
+<<<<<<< HEAD
 router.post("/createroute", isLoggedIn, setAuthFlag, fileUploader.single('roadImage'), (req, res) => {
+=======
+router.post("/createroute", isloggedin, setauthflag, (req, res) => {
+>>>>>>> eea8deda8c32355b80862b541db1ba6e48d7748d
   console.log(req.body)
   let waypoint1 = []
   let waypoint2 = []

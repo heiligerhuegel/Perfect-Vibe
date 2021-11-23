@@ -3,7 +3,7 @@ const User = require("./../models/User.model");
 const bcrypt = require("bcryptjs");
 const zxcvbn = require("zxcvbn");
 
-const isLoggedIn = require("./../middleware/isLoggedIn");
+const isloggedin = require("./../middleware/isloggedin");
 
 const saltRounds = 10;
 
@@ -139,7 +139,7 @@ router.post("/login", (req, res) => {
 });
 
 // GET /logout
-router.get("/logout", isLoggedIn, (req, res) => {
+router.get("/logout", isloggedin, (req, res) => {
   // Delete the session from the sessions collection
   // This automatically invalidates the future request with the same cookie
   req.session.destroy((err) => {
