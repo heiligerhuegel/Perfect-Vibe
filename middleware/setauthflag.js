@@ -1,5 +1,5 @@
 // middleware/isLoggedIn.js
-const isloggedin = require("./log");
+const isloggedin = require("./isloggedin");
 // Custom middleware that checks if the request has a valid cookie
 function setauthflag(req, res, next) {
     if (!req.session.user) {
