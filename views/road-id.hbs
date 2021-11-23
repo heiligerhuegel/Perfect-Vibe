@@ -40,14 +40,14 @@
     container: 'map',
     style:'mapbox://styles/mapbox/streets-v11',
     center: [({{road.waypoints.[0].[1]}}+{{road.waypoints.[1].[1]}})/2,({{road.waypoints.[0].[0]}}+{{road.waypoints.[1].[0]}})/2], // starting position
-    zoom: 12
+    zoom: 6
 });
 
 
 // an arbitrary start will always be the same
 
-const start = [{{road.waypoints.[0].[0]}},{{road.waypoints.[0].[1]}}];
-const end = [{{road.waypoints.[1].[0]}},{{road.waypoints.[1].[1]}}];
+const start = [{{road.waypoints.[0].[1]}},{{road.waypoints.[0].[0]}}];
+const end = [{{road.waypoints.[1].[1]}},{{road.waypoints.[1].[0]}}];
 
 
 // create a function to make a directions request
@@ -71,7 +71,7 @@ async function getRoute(end) {
     }
   };
   // if the route already exists on the map, we'll reset it using setData
-  
+
   if (map.getSource('route')) {
     map.getSource('route').setData(geojson);
   }
@@ -101,7 +101,7 @@ async function getRoute(end) {
 map.on('load', () => {
   // make an initial directions request that
   // starts and ends at the same location
-  getRoute(start);
+  getRoute(end);
 
   // Add starting point to the map
   map.addLayer({
@@ -129,25 +129,6 @@ map.on('load', () => {
     }
   });
 
-  // this is where the code from the next step will go
-  map.on('click', (event) => {
-  const coords = Object.keys(event.lngLat).map((key) => event.lngLat[key]);
-  const end = {
-    type: 'FeatureCollection',
-    features: [
-      {
-        type: 'Feature',
-        properties: {},
-        geometry: {
-          type: 'Point',
-          coordinates: coords
-        }
-      }
-    ]
-  };
-  if (map.getLayer('end')) {
-    map.getSource('end').setData(end);
-  } else {
     map.addLayer({
       id: 'end',
       type: 'circle',
@@ -161,7 +142,7 @@ map.on('load', () => {
               properties: {},
               geometry: {
                 type: 'Point',
-                coordinates: coords
+                coordinates: end
               }
             }
           ]
@@ -172,8 +153,6 @@ map.on('load', () => {
         'circle-color': '#f30'
       }
     });
-  }
-  getRoute(coords);
-});
+
 });
 </script>
