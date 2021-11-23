@@ -28,10 +28,6 @@
     "nodemon": "^2.0.15"
   },
   "engines": {
-<<<<<<< HEAD
-    "node": "16.x"
-=======
     "node": "14.x"
->>>>>>> eea8deda8c32355b80862b541db1ba6e48d7748d
   }
 }
