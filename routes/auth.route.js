@@ -3,7 +3,7 @@ const User = require("./../models/User.model");
 const bcrypt = require("bcryptjs");
 const zxcvbn = require("zxcvbn");
 
-const isloggedin = require("../middleware/isloggedin");
+const isloggedin = require("./../middleware/isloggedin");
 
 const saltRounds = 10;
 

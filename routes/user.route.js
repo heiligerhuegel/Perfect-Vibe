@@ -1,6 +1,6 @@
 const User = require("./../models/User.model");
-const isloggedin = require("../middleware/isloggedin");
-const setauthflag = require("../middleware/setauthflag")
+const isloggedin = require("./../middleware/isloggedin");
+const setauthflag = require("./../middleware/setauthflag")
 const router = require("express").Router();
 const axios = require('axios');
 

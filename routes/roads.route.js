@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const Road = require("./../models/road.model");
 const token = process.env.MAPBOX_TOKEN;
-const isloggedin = require("../middleware/isloggedin");
-const setauthflag = require("../middleware/setauthflag")
+const isloggedin = require("./../middleware/isloggedin");
+const setauthflag = require("./../middleware/setauthflag")
 const axios = require('axios');
 
 
