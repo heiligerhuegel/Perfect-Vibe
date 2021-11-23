@@ -24,6 +24,8 @@ router.get("/:id", isLoggedIn, setAuthFlag, (req, res) => {
   });
 
 
+
+
 // router.post("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
 
 //     // User.findById(userId)

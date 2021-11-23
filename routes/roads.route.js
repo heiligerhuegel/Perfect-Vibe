@@ -27,13 +27,6 @@ router.get("/road/:id", (req, res) => {
 });
 
 router.get("/createroute", isLoggedIn, setAuthFlag, (req, res) => {
-  axios.get('https://api.mapbox.com/directions/v5/mapbox/cycling/-84.518641,39.134270;-84.512023,39.102779?geometries=geojson&access_token=pk.eyJ1IjoiaGVpbGlnZXJodWVnZWwiLCJhIjoiY2t2d2dmNXJyMDd3MzJ1cWkwajBtdW5vaSJ9.tMlXeOyESPxI3ZBVdxlYoA')
-  .then(response => {
-      console.log(response.data);
-  })
-  .catch(error => {
-      console.log(error);
-  });
   res.render('create-route')
 })
 
