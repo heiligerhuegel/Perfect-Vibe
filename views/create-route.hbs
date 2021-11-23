@@ -1,31 +1,47 @@
 <link rel="stylesheet" href="../stylesheets/road-id.css" />
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
-<div id='map' style='width: 800px; height: 800px;'></div>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css"
+  rel="stylesheet"
+/>
+<script
+  src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"
+></script>
+<link
+  rel="stylesheet"
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+  type="text/css"
+/>
+
+<div id="map" style="width: 800px; height: 800px;"></div>
+
 <script>
-// TO MAKE THE MAP APPEAR YOU MUST
-// ADD YOUR ACCESS TOKEN FROM
-// https://account.mapbox.com
-mapboxgl.accessToken = 'pk.eyJ1IjoiaGVpbGlnZXJodWVnZWwiLCJhIjoiY2t3YXh5Y2l1MXk1dTJ3cWxlMTZvZ2FqdCJ9.yck0GJzLuAQfrYHahudOdA';
+mapboxgl.accessToken =
+    'pk.eyJ1IjoiaGVpbGlnZXJodWVnZWwiLCJhIjoiY2t3YXh5Y2l1MXk1dTJ3cWxlMTZvZ2FqdCJ9.yck0GJzLuAQfrYHahudOdA';
+
 const map = new mapboxgl.Map({
-container: 'map', // container ID
-style: 'mapbox://styles/mapbox/streets-v11', // style URL
-center: [-74.5, 40], // starting position [lng, lat]
-zoom: 9 // starting zoom
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-74.5, 40],
+    zoom: 9
 });
-map.addControl(
-new MapboxDirections({
-accessToken: mapboxgl.accessToken
-}),
-'top-left'
-);
+const directions = new MapboxDirections({
+    accessToken: mapboxgl.accessToken,
+    steps: false,
+    gemetries: "polyline",
+    controls: {
+        instructions: false
+    }
+})
+map.addControl(directions, 'top-left');
+map.on("load", () => {
+    directions.on("route", (event) => {
+        console.log(event)
+    })
+})
 </script>
 
-event.route.0.distance (meters)
-event.route.0.duration (seconds)
+{{!  event.route[0].distance(meters)
+event.route[0].duration (seconds)
 event.route.0.legs.0.steps[0].maneuver.location
-event.route.0.legs.0.steps[-1].maneuver.location
-
-
+event.route[0].legs[0].steps[event.route[0].legs[0].steps.length-1].maneuver.location}} 
