@@ -9,7 +9,7 @@ const roadSchema = new Schema({
   country: { type: String, required: false },
   length: { type: Number, required: true },
   duration: { type: Number, required: true },
-  image: [],
+  imageUrl: { type: String, required: true },
   waypoints: [[{ type: Number }, { type: Number }]],
 });
 
