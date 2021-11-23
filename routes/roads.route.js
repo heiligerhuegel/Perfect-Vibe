@@ -32,7 +32,7 @@ router.get("/road/:id", setauthflag, (req, res) => {
 });
 
 router.get("/createroute", isloggedin, setauthflag, (req, res) => {
-  res.render('create-route')
+  res.render('create-route', {user: req.user} )
 })
 
 router.post("/createroute", isloggedin, setauthflag, (req, res) => {
