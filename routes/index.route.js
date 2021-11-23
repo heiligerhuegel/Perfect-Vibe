@@ -4,7 +4,7 @@ const setauthflag = require("../middleware/setauthflag")
 
 
 /* GET home page */
-router.get("/", setauthflag, (req, res, next) => {
+router.get("/",isloggedin, setauthflag, (req, res, next) => {
   let data
   // Check if the incoming request has a valid cookie/session
   let userisloggedin = false;
