@@ -53,8 +53,10 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   let length = Number(req.body.distance)
   let duration = Number(req.body.duration)
   waypoints.push(waypoint1, waypoint2)
-  console.log(req.body.roadImage)
-  console.log(req.file)
+
+  //console.log(req.body.roadImage)
+  //console.log(req.file)
+
   Road.create({ userId, userName, name, description, length, duration, imageUrl: req.file.path})
   .then((createdRoot) => {
     console.log(createdRoot);
@@ -67,7 +69,7 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
       console.log(err)    
   });
 //   let image = []
-
+  // add route to user array of routes
 
   })
 
