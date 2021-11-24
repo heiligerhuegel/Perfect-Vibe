@@ -61,7 +61,7 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   Road.create({ userId, userName, name, description, length, duration, imageUrl: req.file.path})
   .then((createdRoot) => {
     console.log(createdRoot);
-      //User.findByIdAndUpdate(req.session.user._id, {$push: {routes: {createdRoot._id}}})
+      User.findByIdAndUpdate(req.session.user._id, {$push: {routes: {createdRoot._id}}})
       return Road.findByIdAndUpdate(createdRoot._id, { $push: { waypoints: { $each: waypoints  } }})    
   })
   .then((road) => {
