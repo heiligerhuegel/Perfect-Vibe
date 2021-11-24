@@ -44,8 +44,8 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   waypoint1.push(Number(req.body.start.split(",")[0]))
   waypoint2.push(Number(req.body.end.split(",")[1]))
   waypoint2.push(Number(req.body.end.split(",")[0]))
-  console.log(waypoint1)
-  console.log(waypoint2)
+  //console.log(waypoint1)
+  //console.log(waypoint2)
 
   let userId = req.session.user._id
   let userName = req.session.user.username
@@ -54,22 +54,29 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   let length = Number(req.body.distance)
   let duration = Number(req.body.duration)
   waypoints.push(waypoint1, waypoint2)
+  let x
 
   //console.log(req.body.roadImage)
   //console.log(req.file)
 
   Road.create({ userId, userName, name, description, length, duration, imageUrl: req.file.path})
   .then((createdRoot) => {
-    console.log(createdRoot);
-      //User.findByIdAndUpdate(req.session.user._id, {$push: {routes: {createdRoot._id}}})
       return Road.findByIdAndUpdate(createdRoot._id, { $push: { waypoints: { $each: waypoints  } }})    
   })
   .then((road) => {
-      res.redirect(`../road/${road._id}`)
+    let id = road._id
+    x = id
+    return User.findByIdAndUpdate(userId, { $push: { routes: id, }}) 
+  })
+  .then((user) => {
+    
+    let id = user.routes[0]._id
+    res.redirect(`../road/${x}`)
   })
   .catch((err) => {
       console.log(err)    
   });
+  
   
   // add route to user array of routes
 
@@ -80,6 +87,7 @@ router.get("/edit-road/:id", isloggedin, setauthflag, (req, res) => {
   const id = req.params.id;
   Road.findById(id)
   .then((road) => {
+    console.log(road)
     data = {
       road: road,
       accessToken: token,

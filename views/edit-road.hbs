@@ -16,20 +16,21 @@
 <div id="map" style="width: 800px; height: 800px;"></div>
 
 
-<form style="display: flex; flex-direction:column;" action="/edit-road/{{road.id}}" method="POST" enctype="multipart/form-data">
+<form style="display: flex; flex-direction:column;" action="/edit-road/{{road.id}}" method="POST">
 <label for="name">Route Name:</label>
-<input name="name" required type="text" placeholder="{{road.name}}">
+<input name="name" required type="text" value="{{road.name}}" >
 <label for="description">Description:</label>
-<input name="description" required type="text" placeholder="{{road.description}}">
-<label for="distance" >Distance(Km):</label>
-<input readonly type="text" name="distance" id="distance" placeholder="{{road.length}}">
-<label for="duration">Duration(Minutes):</label>
-<input readonly type="text" name="duration" id="duration" placeholder="{{road.duration}}">
-<label for="start">Start-Coordinates:</label>
-<input readonly type="text" name="start" id="start">
-<label for="end">End-Coordinates:</label>
-{{!-- <input readonly type="text" name="end" id="end" >
-<input type="file" name="roadImage" /> --}}
+<input name="description" required type="text" value="{{road.description}}">
+<label hidden for="distance" >Distance(Km):</label>
+<input hidden readonly type="text" name="distance" id="distance" value="{{road.length}}">
+<label hidden for="duration">Duration(Minutes):</label>
+<input hidden readonly type="text" name="duration" id="duration" value="{{road.duration}}">
+<label hidden for="start">Start-Coordinates:</label>
+<input hidden readonly type="text" name="start" id="start">
+<label hidden for="end">End-Coordinates:</label>
+<input hidden readonly type="text" name="end" id="end" >
+
+{{!-- <input type="file" name="roadImage" /> --}}
 
 <button type="submit">Submit</button>
 </form>
