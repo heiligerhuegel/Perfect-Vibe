@@ -85,10 +85,25 @@ router.get("/edit-road/:id", isloggedin, setauthflag, (req, res) => {
       accessToken: token,
       user: req.user
     };
-    console.log(data);
     res.render("edit-road", data);
   });
 
+})
+
+router.post("/edit-road/:id", isloggedin, setauthflag, (req, res)=>{
+  console.log(req.body);
+
+  const id = req.params.id;
+  let name = req.body.name
+  let description = req.body.description
+
+  return Road.findByIdAndUpdate(id, {"name": name ,"description": description })
+  .then(
+    res.redirect(`/road/${id}`)
+  )
+  .catch((err) => {
+    console.log(err)    
+});
 })
 //api.mapbox.com/directions/v5/mapbox/driving/{{road.waypoints.0.0}},{{road.waypoints.0.1}};{{road.waypoints.1.0}},{{road.waypoints.1.1}}?geometries=geojson&access_token=MAPBOX_TOKEM
 
