@@ -8,7 +8,6 @@
 .routes {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--lightblue);
 }
 
 .title {
@@ -28,17 +27,23 @@
   text-align: center;
 }
 
+
+
 .title h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #8676c2;
-  width: 200px;
-  border: 1px solid var(--lightblue);
   text-align: center;
-  padding: 10px 10px;
+  align-self: center;
+  padding: 10px 22px;
+  margin-top: 20px;
+  background: #7e6abd;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+
 }
+
 .title h3:hover {
-  background-color: #554a7d;
+  background: #423768;
 }
 
 .list {

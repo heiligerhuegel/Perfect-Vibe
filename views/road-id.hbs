@@ -6,18 +6,17 @@
 />
 
 <div class="routeId">
+  <div class="routeIdDescription">
+    {{! description of road: name, length, distance, and stuff below map }}
+    <h2>{{road.name}}</h2>
+    <h4>by User:  {{road.userName}}</h4>
+    {{!-- <h3>{{road.country}}</h3> --}}
+    <h4>Distance: {{road.length}} km</h4>
+    <h4>Duration: {{road.duration}} minutes</h4>
+    <p>Description: {{road.description}}</p>
+   </div>
 
   <div class="routeIdSectionOne">
-
-    <div class="routeIdDescription">
-      {{! description of road: name, length, distance, and stuff below map }}
-      <h2>{{road.name}}</h2>
-      <h3>by {{road.userName}}</h3>
-      <h3>{{road.country}}</h3>
-      <h3>{{road.length}} km</h3>
-      <h3>{{road.duration}} minutes</h3>
-      <p>{{road.description}}</p>
-    </div>
 
     
     <div class="RouteIdMap">

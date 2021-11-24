@@ -11,20 +11,32 @@
   padding: 0px;
 }
 
+.routeId {
+  display:flex;
+  flex-direction: column;
+  /* height: calc(100vh - 82px - 50px); */
+}
+
 .routeIdSectionOne {
   width: 100%;
-
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* height: calc(0vh - 82px - 100px); */
+}
 
+.RouteIdMap {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
 }
 
 #map {
-  width: 90vw;
-  height: 70vh;
-  border: 1px solid var(--lightblue);
+  width: 40vw;
+  height: 50vh;
+  /* border: 1px solid var(--lightblue); */
 }
 
 .routeIdDescription{
@@ -32,16 +44,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
-  margin: 20px 0px
+  /* margin: 20px 0px */
+  height: 30vh;
+  margin-top: 50px;
+  margin-left: 5vw;
+  color: white;
 }
+
+.routeIdDescription h2{
+border-bottom: 1px solid var(--lightblue);
+margin-bottom: 2px;
+}
+
+.routeIdDescription h4{
+  margin-bottom: 2px;
+  }
+
+  .routeIdDescription p{
+    margin-top: 5px;
+    }
 
 .routeIdPictures{
   width: 50vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .routeIdPictures img {
-  width: 100%;
+  /* width: 100%; */
+  width: 40vw;
+  height: 50vh;
 }
 
 .create-route-main {
@@ -54,7 +88,7 @@
 }
 
 #map {
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 form {
