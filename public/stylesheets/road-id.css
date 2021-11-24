@@ -43,3 +43,58 @@
 .routeIdPictures img {
   width: 100%;
 }
+
+.create-route-main {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 50px; 
+  gap: 150px;
+  height: calc(100vh - 82px - 50px);
+}
+
+#map {
+  margin-top: 100px;
+}
+
+form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction:column;
+}
+form label {
+  color: white;
+  margin-bottom: 4px;
+  float: left;
+}
+form input {
+  padding: 2px 2px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+form input#file-upload-button {
+  align-self: center;
+  padding: 17px 44px;
+  margin-top: 20px;
+  background: #7e6abd;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+
+}
+
+form button {
+  align-self: center;
+  padding: 17px 44px;
+  margin-top: 20px;
+  background: #7e6abd;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+}
+form button:hover {
+  background: #423768;
+}
