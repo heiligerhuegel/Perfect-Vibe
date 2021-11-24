@@ -17,10 +17,11 @@
         <ul>
           <li><a href="/roads">Routes</a></li>
           {{! link to rotes page }}
-          <li><a href="/route-id">Random</a></li>
+          {{!-- <li><a href="/route-id">Random</a></li> --}}
           {{! id = Math.floor(Math.random()*Database.length) // or something like
           that }}
           {{#if user.isloggedin}}
+          <li><a href="createroute">New route</a></li>
           <li><a href="/{{user.userId}}"><img
                 src="./../images/benutzersilhouette.png"
                 alt="User Image"

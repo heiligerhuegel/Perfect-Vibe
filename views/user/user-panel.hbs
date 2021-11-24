@@ -1,11 +1,12 @@
 <div>
     <h1>Hello {{userData.username}}</h1>
 
-    <h2> Here are th routes you created:</h2>
+    <h2> Here are the routes you created:</h2>
 
 
     {{#each data.routes}}
         {{> roadcard this}}
+        <a href="/edit-route/{{data.routes._id}}">Edit this route</a>
     {{/each}}
 {{!-- <form action="/celebrities/create" method="POST">
   <label>Route Name</label>

@@ -73,8 +73,23 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   
   // add route to user array of routes
 
-  })
+})
 
+
+router.get("/edit-road/:id", isloggedin, setauthflag, (req, res) => {
+  const id = req.params.id;
+  Road.findById(id)
+  .then((road) => {
+    data = {
+      road: road,
+      accessToken: token,
+      user: req.user
+    };
+    console.log(data);
+    res.render("edit-road", data);
+  });
+
+})
 //api.mapbox.com/directions/v5/mapbox/driving/{{road.waypoints.0.0}},{{road.waypoints.0.1}};{{road.waypoints.1.0}},{{road.waypoints.1.1}}?geometries=geojson&access_token=MAPBOX_TOKEM
 
 // lets create all the routes in be beginning by hand and add this panel if everything works
