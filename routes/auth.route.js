@@ -74,6 +74,7 @@ router.post("/signup", (req, res) => {
     })
     .then((createdUser) => {
       // Redirect to the home `/` page after the successful signup
+      req.session.user = createdUser;
       res.redirect("/login");
     })
     .catch((err) => {
