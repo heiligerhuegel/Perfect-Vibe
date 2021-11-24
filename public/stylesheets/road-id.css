@@ -39,3 +39,7 @@
 .routeIdPictures{
   width: 50vw;
 }
+
+.routeIdPictures img {
+  width: 100%;
+}
