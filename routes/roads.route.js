@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Road = require("./../models/road.model");
+const User = require("./../models/user.model");
 const token = process.env.MAPBOX_TOKEN;
 const isloggedin = require("../middleware/isloggedin");
 const setauthflag = require("./../middleware/setauthflag")
@@ -60,6 +61,7 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   Road.create({ userId, userName, name, description, length, duration, imageUrl: req.file.path})
   .then((createdRoot) => {
     console.log(createdRoot);
+      //User.findByIdAndUpdate(req.session.user._id, {$push: {routes: {createdRoot._id}}})
       return Road.findByIdAndUpdate(createdRoot._id, { $push: { waypoints: { $each: waypoints  } }})    
   })
   .then((road) => {
@@ -68,7 +70,7 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
   .catch((err) => {
       console.log(err)    
   });
-//   let image = []
+  
   // add route to user array of routes
 
   })
