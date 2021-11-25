@@ -1,0 +1,13 @@
+.error {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 50px; 
+    gap: 150px;
+    height: calc(100vh - 82px - 54px);
+}
+
+.error h1, h2 {
+    color: white;
+}
