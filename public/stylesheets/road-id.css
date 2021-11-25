@@ -37,6 +37,7 @@
   width: 40vw;
   height: 50vh;
   /* border: 1px solid var(--lightblue); */
+  border-radius: 10px;
 }
 
 .routeIdDescription{
@@ -76,6 +77,7 @@ margin-bottom: 2px;
   /* width: 100%; */
   width: 40vw;
   height: 50vh;
+  border-radius: 10px;
 }
 
 .create-route-main {
@@ -89,6 +91,7 @@ margin-bottom: 2px;
 
 #map {
   /* margin-top: 100px; */
+  border-radius: 10px;
 }
 
 form {
@@ -131,4 +134,21 @@ form button {
 }
 form button:hover {
   background: #423768;
+}
+
+.edit-delete{
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+
+.edit-delete form{
+  margin: 0px;
+  margin-bottom: 5px;
+}
+.edit-delete button{
+  margin: 0px;
 }
