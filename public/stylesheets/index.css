@@ -6,41 +6,52 @@
   --lightblue: #daedff;
 }
 
-.landing {
-  height: calc(100vh - 41px);
-  width: 100%;
+.main {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
 
+.landing {
+  height: calc(100vh);
+  width: 80%;
   background-image: url("./../images/roadImage.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-
   display: flex;
   flex-direction: column;
+  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(560deg);
   justify-content: center;
   align-items: center;
-
-  border-bottom: 1px solid var(--lightblue);
+  /* border-bottom: 1px solid var(--lightblue); */
+  /* margin-top: 50px; */
+  margin-top: 80px;
+  border-radius: 75px;
+  transform: translate3d(10px, 37px, 10px);
+  /* opacity: 0.7; */
 }
 
 .landing-title {
-  color: var(--darkgrey);
-
+  color: #06071eb5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
+  font-size: 24px;
 }
 
 .landing-section {
-  height: calc(100vh - 35px);
+  height: calc(100vh);
   width: 100%;
-  background-color: var(--darkgrey);
+  background-color: #4c3c86;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--lightblue);
+  border-bottom: 1px solid #b487e8;
+  margin-top: 50px;
 }
 
 .landing-section-pics {
@@ -51,11 +62,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid var(--lightblue);
+  border-right: 1px solid #b387e7;
 }
 
 .landing-section-pics img {
-  width: 100%;
+  width: 80%;
+  border-radius: 15px;
 }
 
 .landing-section-links {
