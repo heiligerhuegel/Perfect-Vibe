@@ -1,10 +1,4 @@
-:root {
-  --blue: #57607a;
-  --lightgrey: #57697a;
-  --darkgrey: #3d4955;
-  --white: #edf6ff;
-  --lightblue: #daedff;
-}
+
 
 .main {
   display: flex; 
@@ -14,22 +8,21 @@
 
 .landing {
   height: calc(100vh);
-  width: 80%;
+  width: 90vw;
   background-image: url("./../images/roadImage.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
   display: flex;
   flex-direction: column;
-  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(560deg);
+  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(328deg);
   justify-content: center;
   align-items: center;
-  /* border-bottom: 1px solid var(--lightblue); */
-  /* margin-top: 50px; */
+
   margin-top: 80px;
   border-radius: 75px;
   transform: translate3d(10px, 37px, 10px);
-  /* opacity: 0.7; */
+
 }
 
 .landing-title {
@@ -50,7 +43,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #b487e8;
   margin-top: 50px;
 }
 
@@ -63,11 +55,13 @@
   justify-content: center;
   align-items: center;
   border-right: 1px solid #b387e7;
+  
 }
 
 .landing-section-pics img {
   width: 80%;
   border-radius: 15px;
+  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(328deg);
 }
 
 .landing-section-links {

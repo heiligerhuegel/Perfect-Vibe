@@ -3,13 +3,13 @@
 <div class="routes">
 
   <div class="title">
-    <h2>Routes:</h2>
+    <h1>All Routes:</h1>
+    <h2>Here are all the routes created by all Users</h2>
     <a href="createroute"><h3>Click here to create your own route.</h3></a>
   </div>
 
   <div class="list">
     <div class="SingleRoad">
-      
       {{#each roadsFromDB}}
         {{> roadcard this}}
       {{/each}}

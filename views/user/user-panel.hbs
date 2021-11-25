@@ -1,12 +1,25 @@
-<div>
+<link rel="stylesheet" href="./stylesheets/routes.css" />
+
+<div class="routes">
+    
+
+    
+
+  <div class="title">
     <h1>Hello {{userData.username}}</h1>
-
     <h2> Here are the routes you created:</h2>
-
+    <h3><a href="createroute">Click here <br> to create your own route.</a></h3>
+  </div>
+ 
 
     {{#each userData.routes}}
+     <div class = "edit-field">
+        <a href="/edit-road/{{this._id}}"><h3>Edit this route.</h3></a>
+    </div>
         {{> roadcard this}}
-        <a href="/edit-road/{{this._id}}">Edit this route</a>
+
+       
+        
     {{/each}}
 {{!-- <form action="/celebrities/create" method="POST">
   <label>Route Name</label>

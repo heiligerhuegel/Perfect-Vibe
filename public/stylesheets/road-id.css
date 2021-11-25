@@ -1,47 +1,75 @@
-:root {
-  --blue: #57607a;
-  --lightgrey: #57697a;
-  --darkgrey: #3d4955;
-  --white: #edf6ff;
-  --lightblue: #daedff;
-}
+
 
 * {
   margin: 0px;
   padding: 0px;
 }
 
+.routeId {
+  display:flex;
+}
+
 .routeIdSectionOne {
   width: 100%;
-
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.RouteIdMap {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
 }
 
 #map {
-  width: 90vw;
-  height: 70vh;
-  border: 1px solid var(--lightblue);
+  width: 40vw;
+  height: 50vh;
+  border-radius: 10px;
 }
 
 .routeIdDescription{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-
-  margin: 20px 0px
+  /* margin: 20px 0px */
+  min-height: 10vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  color: white;
 }
+
+.routeIdDescription h2{
+border-bottom: 1px solid var(--lightblue);
+margin-bottom: 2px;
+}
+
+.routeIdDescription h4{
+  margin-bottom: 2px;
+  }
+
+  .routeIdDescription p{
+    margin-top: 5px;
+    max-width: 40vw;
+    word-wrap: break-word;
+    }
 
 .routeIdPictures{
   width: 50vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .routeIdPictures img {
-  width: 100%;
+  /* width: 100%; */
+  width: 40vw;
+  height: 50vh;
+  border-radius: 10px;
 }
 
 .create-route-main {
@@ -50,17 +78,18 @@
   align-items: center;
   padding: 50px; 
   gap: 150px;
-  height: calc(100vh - 82px - 50px);
+  height: calc(100vh - 82px - 54px);
 }
 
 #map {
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  border-radius: 10px;
 }
 
 form {
-  margin-top: 100px;
   display: flex;
   flex-direction:column;
+  
 }
 form label {
   color: white;
@@ -73,6 +102,14 @@ form input {
   margin-bottom: 10px;
 }
 
+form textarea {
+  padding: 2px 2px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  height: 100px;
+  resize: none;
+}
+
 form input#file-upload-button {
   align-self: center;
   padding: 17px 44px;
@@ -82,6 +119,7 @@ form input#file-upload-button {
   border-radius: 7px;
   color: white;
   font-size: 18px;
+  cursor:pointer;
 
 }
 
@@ -94,7 +132,43 @@ form button {
   border-radius: 7px;
   color: white;
   font-size: 18px;
+  cursor:pointer;
 }
 form button:hover {
   background: #423768;
+}
+
+.edit-delete{
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
+
+.edit-delete form{
+  margin: 0px;
+  margin-bottom: 5px;
+}
+.edit-delete button{
+  margin: 0px;
+  cursor:pointer;
+}
+
+.column {
+  flex-direction: column;
+  gap: 80px;
+}
+
+.edit-road-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+
+.single-road-main{
+  height: calc(100vh - 82px - 54px);
+  margin-top: 100px;
 }

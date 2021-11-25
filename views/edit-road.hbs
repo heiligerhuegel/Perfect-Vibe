@@ -12,30 +12,48 @@
   href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
   type="text/css"
 />
-<div style="display: flex; justify-content: center; padding: 50px; gap: 150px">
-<div id="map" style="width: 800px; height: 800px;"></div>
+<div  class="create-route-main column">
+  <div class="edit-road-row">
+    <div id="map" style="width: 35vw; height: 55vh; margin-top: 80px;"></div>
 
 
-<form style="display: flex; flex-direction:column;" action="/edit-road/{{road.id}}" method="POST">
-<label for="name">Route Name:</label>
-<input name="name" required type="text" value="{{road.name}}" >
-<label for="description">Description:</label>
-<input name="description" required type="text" value="{{road.description}}">
-<label hidden for="distance" >Distance(Km):</label>
-<input hidden readonly type="text" name="distance" id="distance" value="{{road.length}}">
-<label hidden for="duration">Duration(Minutes):</label>
-<input hidden readonly type="text" name="duration" id="duration" value="{{road.duration}}">
-<label hidden for="start">Start-Coordinates:</label>
-<input hidden readonly type="text" name="start" id="start">
-<label hidden for="end">End-Coordinates:</label>
-<input hidden readonly type="text" name="end" id="end" >
+    <form style="display: flex; flex-direction:column;" action="/edit-road/{{road.id}}" method="POST">
 
-{{!-- <input type="file" name="roadImage" /> --}}
+      <label for="name">Route Name:</label>
+      <input name="name" required type="text" value="{{road.name}}" >
 
-<button type="submit">Submit</button>
-</form>
+      <label for="description">Description:</label>
+      <textarea name="description" required type="text" value="{{road.description}}" id="description"></textarea>
+
+      <label hidden for="distance" >Distance(Km):</label>
+      <input hidden readonly type="text" name="distance" id="distance" value="{{road.length}}">
+
+      <label hidden for="duration">Duration(Minutes):</label>
+      <input hidden readonly type="text" name="duration" id="duration" value="{{road.duration}}">
+
+      <label hidden for="start">Start-Coordinates:</label>
+      <input hidden readonly type="text" name="start" id="start">
+
+      <label hidden for="end">End-Coordinates:</label>
+      <input hidden readonly type="text" name="end" id="end" >
+
+      {{!-- <input type="file" name="roadImage" /> --}}
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="edit-delete">
+
+  <form action="/edit-road/delete/{{road.id}}" method="POST">
+  <label for="name">Delete this Route:</label>
+  <button type="submit">I want to delete this Route!</button>
+  </form>
+
+  </div>
 
 </div>
+
+
 
 <script>
 

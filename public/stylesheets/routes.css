@@ -1,9 +1,11 @@
-:root {
-  --blue: #57607a;
-  --lightgrey: #57697a;
-  --darkgrey: #3d4955;
-  --white: #edf6ff;
-  --lightblue: #daedff;
+
+*{
+  color: white;
+}
+.routes {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 36px);
 }
 .routes {
   display: flex;
@@ -13,32 +15,36 @@
 
 .title {
   width: 100%;
-  padding: 10px 0px;
-  color: var(--lightblue);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin-top: 100px;
+  border-bottom: 1px solid #b387e4;
 }
 
 .title h2 {
-  width: 200px;
-  border-bottom: 1px solid var(--lightblue);
   text-align: center;
 }
 
+
+
 .title h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #8676c2;
-  width: 200px;
-  border: 1px solid var(--lightblue);
   text-align: center;
-  padding: 10px 10px;
+  align-self: center;
+  padding: 10px 22px;
+  margin: 20px;
+  background: #7e6abd;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+
 }
+
 .title h3:hover {
-  background-color: #554a7d;
+  background: #423768;
 }
 
 .list {
@@ -49,7 +55,7 @@
   width: 100%;
 }
 .SingleRoad {
-  width: 70%;
+  width: 100vw;
 }
 
 .route-card {
@@ -57,9 +63,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 15px;
   border-bottom: 1px solid #b387e4;
-  height: 200px;
+  min-height: 260px;
+  margin-top: 5px;
 }
 .card-image {
   height: 100%;
@@ -80,7 +86,9 @@
 .card-description {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  justify-content: flex-start;
+
+
   width: 50%;
   height: 100%;
   margin-top: 15px;
@@ -88,7 +96,38 @@
 .card-description-link {
   margin-top: 35px;
 }
+.card-description-link {
+  margin-top: 35px;
+}
 .card-description-county {
   margin-top: 4px;
   
+}
+
+.edit-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+
+
+  margin-top: 10px;
+  text-align: center;
+}
+
+.edit-field h3 {
+  text-align: center;
+  align-self: center;
+  padding: 10px 22px;
+  margin: 20px;
+  background: #7e6abd;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+
+}
+
+.edit-field h3:hover {
+  background: #423768;
 }

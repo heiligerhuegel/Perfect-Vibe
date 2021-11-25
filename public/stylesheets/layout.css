@@ -1,16 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
-:root {
-  --blue: #142852;
-  --lightgrey: #4b3e60;
-  --darkgrey: #4b3e60;
-  --white: #edf6ff;
-  --lightblue: #daedff;
-}
 
 * {
   margin: 0px;
   padding: 0px;
+  
 }
 
 body {
@@ -36,11 +30,11 @@ body a {
 }
 
 .logo {
-  margin-left: 30px;
+  margin-left: 5vw;
 }
 
 .nav {
-  margin-right: 30px;
+  margin-right: 5vw;
 }
 .nav ul {
   display: flex;
@@ -50,7 +44,7 @@ body a {
 }
 
 .nav li {
-  margin: 0px 10px;
+  margin-left: 25px;
   display: inline;
   text-decoration: none;
 }
@@ -63,10 +57,11 @@ body a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid #b487e8;
 }
 
 .footer li {
-  margin: 10px 10px;
+  margin-left: 10px 10px;
   display: inline;
   text-decoration: none;
 }
