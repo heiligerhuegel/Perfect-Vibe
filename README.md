@@ -17,24 +17,23 @@ A platform to create roadtrips and share those experiences with other users.
 
 - **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
 
-- **homepage** - Landing page with some nice pictures and slogan aswell as description what is happening on the Page
+- **homepage** - Landing page with some nice pictures and slogan aswell as description what the webside is used for.
 
-- **sign up** - Easy ans simple no instructions needed
+- **sign up** - Easy and simple no instructions needed
 
-- **login** - Easy ans simple no instructions needed
+- **login** - Easy and simple no instructions needed
 
-- **logout** - Logout possible on every Page with a button on the layout in the top left. 
+- **logout** - Logout possible on every page with a button on the layout in the top left. 
 
-- **all routes** - .
+- **all routes** - A list of all the routes that have been created by all Users
 
-- **add routes** - every user
+- **add routes** - Gives the logged in user the ability to add new routes
 
-- **my routes** - As a user I want to see the list of restaurant filter by my preferences.
+- **my routes** - Gives the logged in user the ability to see all the 
+
+- **edit routes**  - Gives the logged in User the ability to edit the own routes
 
 
-
-
-<br>
 
 
 
@@ -53,18 +52,35 @@ A platform to create roadtrips and share those experiences with other users.
 ## Models
 
 User model
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      unique: true, //-> Ideally, should be unique, but its up to you
+      required: true
+    },
+    password: { type: String, required: true },
+    routes: [
+      { type: Schema.Types.ObjectId, ref: "Road" }
+    ]
+  },
+  {
+    timestamps: true,
+  }
+);
 
 Routes model
-
-
-
-
-
-
-
-
-
-
+const roadSchema = new Schema({
+  userID: { type: Schema.Types.ObjectId, ref: "User" },
+  userName: { type: String },
+  name: { type: String, required: true },
+  description: { type: String, required: false },
+  country: { type: String, required: false },
+  length: { type: Number, required: true },
+  duration: { type: Number, required: true },
+  imageUrl: { type: String, required: true },
+  waypoints: [[{ type: Number }, { type: Number }]],
+});
 
 
 
@@ -72,24 +88,18 @@ Routes model
 
 The url to your repository and to your deployed project
 
-[Repository Link]()
+https://github.com/heiligerhuegel/Perfect-Vibe
 
-[Deploy Link]()
-
-
-
-<br>
+https://perfectvibe.herokuapp.com/
 
 
 
 ### Slides
 
-The url to your presentation slides
 
-[Slides Link](https://docs.google.com/presentation/d/1P5FIi0vHZBUcgUtmt1M4_lLCO5dwdJ4UOgtJa4ehGfk/edit?usp=sharing)
 
 ### Contributors
-FirstName LastName - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+Giorgi Trapaidze - https://github.com/giorgitrapaidze - https://www.linkedin.com/in/giorgi-trapaidze-9635623a/
 
-FirstName LastName - [`<github-username>`](https://github.com/person2-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+Manuel Wegener - https://github.com/heiligerhuegel - https://www.linkedin.com/in/manuelwegener/
 ```
