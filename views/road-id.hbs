@@ -44,7 +44,7 @@
     style: "mapbox://styles/heiligerhuegel/ckvwgwlvq4wrj14m37krtmygg",
     //style:'mapbox://styles/mapbox/streets-v11',
     center: [({{road.waypoints.[0].[1]}}+{{road.waypoints.[1].[1]}})/2,({{road.waypoints.[0].[0]}}+{{road.waypoints.[1].[0]}})/2], // starting position
-    zoom: 5
+    zoom: 0
 });
 
 
@@ -57,7 +57,6 @@ const endPoint = [{{road.waypoints.[1].[1]}},{{road.waypoints.[1].[0]}}];
 
 const start = startPoint;
 const end = endPoint;
-
 
 
 
@@ -81,6 +80,25 @@ async function getRoute(end) {
       coordinates: route
     }
   };
+
+  const coordinates = geojson.geometry.coordinates;
+    console.log(coordinates)
+
+   const bounds = new mapboxgl.LngLatBounds(
+    coordinates[0],
+    coordinates[0]
+    );
+    
+    // Extend the 'LngLatBounds' to include every coordinate in the bounds result.
+    for (const coord of coordinates) {
+    bounds.extend(coord);
+    }
+    
+    map.fitBounds(bounds, {
+    padding: 20
+    });
+
+  console.log(geojson);
   // if the route already exists on the map, we'll reset it using setData
 
   if (map.getSource('route')) {
@@ -114,31 +132,33 @@ map.on('load', () => {
   // starts and ends at the same location
   getRoute(end);
 
+  
+
   // Add starting point to the map
-  map.addLayer({
-    id: 'point',
-    type: 'circle',
-    source: {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: start
+    map.addLayer({
+      id: 'point',
+      type: 'circle',
+      source: {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [
+            {
+              type: 'Feature',
+              properties: {},
+              geometry: {
+                type: 'Point',
+                coordinates: start
+              }
             }
-          }
-        ]
+          ]
+        }
+      },
+      paint: {
+        'circle-radius': 10,
+        'circle-color': '#3887be'
       }
-    },
-    paint: {
-      'circle-radius': 10,
-      'circle-color': '#3887be'
-    }
-  });
+    });
 
     map.addLayer({
       id: 'end',
@@ -163,7 +183,10 @@ map.on('load', () => {
         'circle-radius': 10,
         'circle-color': '#f30'
       }
+
+      
     });
 
+    
 });
 </script>
