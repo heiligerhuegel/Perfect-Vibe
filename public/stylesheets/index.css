@@ -1,10 +1,4 @@
-:root {
-  --blue: #57607a;
-  --lightgrey: #57697a;
-  --darkgrey: #3d4955;
-  --white: #edf6ff;
-  --lightblue: #daedff;
-}
+
 
 .main {
   display: flex; 
@@ -24,12 +18,11 @@
   filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(328deg);
   justify-content: center;
   align-items: center;
-  /* border-bottom: 1px solid var(--lightblue); */
-  /* margin-top: 50px; */
+
   margin-top: 80px;
   border-radius: 75px;
   transform: translate3d(10px, 37px, 10px);
-  /* opacity: 0.7; */
+
 }
 
 .landing-title {

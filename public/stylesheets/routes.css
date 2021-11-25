@@ -1,9 +1,6 @@
-:root {
-  --blue: #57607a;
-  --lightgrey: #57697a;
-  --darkgrey: #3d4955;
-  --white: #edf6ff;
-  --lightblue: #daedff;
+
+*{
+  color: white;
 }
 .routes {
   display: flex;
@@ -12,7 +9,7 @@
 
 .title {
   width: 100%;
-  color: var(--lightblue);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

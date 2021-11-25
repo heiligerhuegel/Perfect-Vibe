@@ -18,17 +18,24 @@
 
 <form style="display: flex; flex-direction:column;" action="/createroute" method="POST" enctype="multipart/form-data">
 <label for="name">Route Name:</label>
-<input name="name" required type="text">
+<input name="name" required type="text" placeholder="My route">
+
 <label for="description">Description:</label>
-<input name="description" required type="text">
+<textarea name="description" required type="textarea" id="description" placeholder="I like this route because"></textarea>
+
 <label for="distance" >Distance(Km):</label>
 <input readonly type="text" name="distance" id="distance">
+
 <label for="duration">Duration(Minutes):</label>
 <input readonly type="text" name="duration" id="duration">
+
 <label for="start">Start-Coordinates:</label>
 <input readonly type="text" name="start" id="start">
+
 <label for="end">End-Coordinates:</label>
 <input readonly type="text" name="end" id="end">
+
+<label for="end">Picture:</label>
 <input required type="file" name="roadImage" />
 
 <button type="submit">Submit</button>

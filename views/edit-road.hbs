@@ -18,16 +18,22 @@
 
 
 <form style="display: flex; flex-direction:column;" action="/edit-road/{{road.id}}" method="POST">
+
 <label for="name">Route Name:</label>
 <input name="name" required type="text" value="{{road.name}}" >
+
 <label for="description">Description:</label>
-<input name="description" required type="text" value="{{road.description}}">
+<textarea name="description" required type="text" value="{{road.description}}" id="description"></textarea>
+
 <label hidden for="distance" >Distance(Km):</label>
 <input hidden readonly type="text" name="distance" id="distance" value="{{road.length}}">
+
 <label hidden for="duration">Duration(Minutes):</label>
 <input hidden readonly type="text" name="duration" id="duration" value="{{road.duration}}">
+
 <label hidden for="start">Start-Coordinates:</label>
 <input hidden readonly type="text" name="start" id="start">
+
 <label hidden for="end">End-Coordinates:</label>
 <input hidden readonly type="text" name="end" id="end" >
 

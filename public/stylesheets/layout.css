@@ -1,16 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
-:root {
-  --blue: #142852;
-  --lightgrey: #4b3e60;
-  --darkgrey: #4b3e60;
-  --white: #edf6ff;
-  --lightblue: #daedff;
-}
+
 
 * {
   margin: 0px;
   padding: 0px;
+  
 }
 
 body {
