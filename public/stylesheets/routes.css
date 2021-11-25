@@ -58,7 +58,7 @@
   justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #b387e4;
-  height: 200px;
+  min-height: 260px;
   margin-top: 5px;
 }
 .card-image {
