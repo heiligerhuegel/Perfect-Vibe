@@ -12,10 +12,12 @@ router.get("/user/:id", isloggedin, setauthflag, (req, res) => {
     const userId = req.params.id
     User.findById(userId)
         .then((user) => {
+            user.populate("routes")
             data = {
                 user: req.user,
                 userData: user
             }
+            console.log(data.userData)
             res.render('user/user-panel', data)
         })
         .catch((err) => {

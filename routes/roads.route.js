@@ -122,7 +122,7 @@ router.post("/edit-road/delete/:id", isloggedin, setauthflag, (req, res)=>{
 
   return Road.findByIdAndRemove(id)
   .then(
-    res.redirect(`/${userId}`)
+    res.redirect(`/user/${userId}`)
   )
   .catch((err) => {
     console.log(err)    
