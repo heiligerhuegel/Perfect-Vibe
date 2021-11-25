@@ -7,8 +7,6 @@
 
 .routeId {
   display:flex;
-  flex-direction: column;
-  /* height: calc(100vh - 82px - 50px); */
 }
 
 .routeIdSectionOne {
@@ -16,7 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: calc(0vh - 82px - 100px); */
 }
 
 .RouteIdMap {
@@ -40,7 +37,6 @@
   align-items: flex-start;
   /* margin: 20px 0px */
   min-height: 10vh;
-  margin-top: 100px;
   margin-left: 5vw;
   margin-right: 5vw;
   color: white;
@@ -57,6 +53,8 @@ margin-bottom: 2px;
 
   .routeIdDescription p{
     margin-top: 5px;
+    max-width: 40vw;
+    word-wrap: break-word;
     }
 
 .routeIdPictures{
@@ -80,7 +78,7 @@ margin-bottom: 2px;
   align-items: center;
   padding: 50px; 
   gap: 150px;
-  height: calc(100vh - 82px - 50px);
+  height: calc(100vh - 82px - 54px);
 }
 
 #map {
@@ -156,3 +154,19 @@ form button:hover {
   margin: 0px;
 }
 
+.column {
+  flex-direction: column;
+  gap: 80px;
+}
+
+.edit-road-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+
+.single-road-main{
+  height: calc(100vh - 82px - 54px);
+  margin-top: 100px;
+}

@@ -6,29 +6,31 @@
 />
 
 <div class="routeId">
-  <div class="routeIdDescription">
-    {{! description of road: name, length, distance, and stuff below map }}
-    <h2>{{road.name}}</h2>
-    <h4>by User:  {{road.userName}}</h4>
-    {{!-- <h3>{{road.country}}</h3> --}}
-    <h4>Distance: {{road.length}} km</h4>
-    <h4>Duration: {{road.duration}} minutes</h4>
-    <p>Description: {{road.description}}</p>
-   </div>
-
-  <div class="routeIdSectionOne">
-
-    
-    <div class="RouteIdMap">
-      <div id="map"></div>
-      {{! mapbox of road on top 100% width }}
+  <div class="single-road-main">
+    <div class="routeIdDescription">
+      {{! description of road: name, length, distance, and stuff below map }}
+      <h2>{{road.name}}</h2>
+      <h4>by User:  {{road.userName}}</h4>
+      {{!-- <h3>{{road.country}}</h3> --}}
+      <h4>Distance: {{road.length}} km</h4>
+      <h4>Duration: {{road.duration}} minutes</h4>
+      <p>Description: {{road.description}}</p>
     </div>
 
-    <div class="routeIdPictures">
-      <img src="{{road.imageUrl}}" alt="Hier ist ein Bild">
-      {{! pictures of uploaded road at bottom }}
+    <div class="routeIdSectionOne">
+
+      
+      <div class="RouteIdMap">
+        <div id="map"></div>
+        {{! mapbox of road on top 100% width }}
+      </div>
+
+      <div class="routeIdPictures">
+        <img src="{{road.imageUrl}}" alt="Hier ist ein Bild">
+        {{! pictures of uploaded road at bottom }}
+      </div>
+      
     </div>
-    
   </div>
 </div>
 
