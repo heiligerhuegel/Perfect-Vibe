@@ -82,7 +82,6 @@ router.post("/createroute", isloggedin, setauthflag, fileUploader.single('roadIm
 
 })
 
-
 router.get("/edit-road/:id", isloggedin, setauthflag, (req, res) => {
   const id = req.params.id;
   Road.findById(id)
