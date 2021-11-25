@@ -21,7 +21,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(560deg);
+  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(328deg);
   justify-content: center;
   align-items: center;
   /* border-bottom: 1px solid var(--lightblue); */
@@ -62,11 +62,13 @@
   justify-content: center;
   align-items: center;
   border-right: 1px solid #b387e7;
+  
 }
 
 .landing-section-pics img {
   width: 80%;
   border-radius: 15px;
+  filter: sepia(100%) saturate(250%) brightness(62%) hue-rotate(328deg);
 }
 
 .landing-section-links {

@@ -12,18 +12,16 @@
 
 .title {
   width: 100%;
-  padding: 10px 0px;
   color: var(--lightblue);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin-top: 100px;
+  border-bottom: 1px solid #b387e4;
 }
 
 .title h2 {
-  width: 200px;
-  border-bottom: 1px solid var(--lightblue);
   text-align: center;
 }
 
@@ -33,7 +31,7 @@
   text-align: center;
   align-self: center;
   padding: 10px 22px;
-  margin-top: 20px;
+  margin: 20px;
   background: #7e6abd;
   border: none;
   border-radius: 7px;
@@ -62,9 +60,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 15px;
   border-bottom: 1px solid #b387e4;
   height: 200px;
+  margin-top: 5px;
 }
 .card-image {
   height: 100%;
@@ -85,10 +83,8 @@
 .card-description {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   width: 50%;
   height: 100%;
-  margin-top: 15px;
 }
 .card-description-link {
   margin-top: 35px;
@@ -96,4 +92,32 @@
 .card-description-county {
   margin-top: 4px;
   
+}
+
+.edit-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+
+
+  margin-top: 10px;
+  text-align: center;
+}
+
+.edit-field h3 {
+  text-align: center;
+  align-self: center;
+  padding: 10px 22px;
+  margin: 20px;
+  background: #7e6abd;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+
+}
+
+.edit-field h3:hover {
+  background: #423768;
 }
