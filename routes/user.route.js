@@ -11,8 +11,8 @@ const axios = require('axios');
 router.get("/user/:id", isloggedin, setauthflag, (req, res) => {
     const userId = req.params.id
     User.findById(userId)
+    .populate("routes")
         .then((user) => {
-            user.populate("routes")
             data = {
                 user: req.user,
                 userData: user
