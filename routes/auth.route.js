@@ -43,6 +43,7 @@ router.post("/signup", (req, res) => {
   // }
 
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+  //const regextwo = ^([a-z]|[A-Z]|[0-9]){4,8}$;
 
   if (!regex.test(password)) {
     res.status(400).render("auth/user-signup", {
