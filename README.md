@@ -1,5 +1,4 @@
-```
-Perfect Vibe
+# Perfect Vibe
 
 A platform to create roadtrips and share those experiences with other users.
 
@@ -16,37 +15,30 @@ A platform to create roadtrips and share those experiences with other users.
 - **my routes** - Gives the logged in user the ability to see all the 
 - **edit routes**  - Gives the logged in User the ability to edit the own routes
 
-
-
-
-
 ## Server Routes (Back-end):
 
-Index: 
-GET "/" 								-renders Homepage
-GET "/secret"						-dummy secret page
-
-User:
-GET "/:id"							-User page only visible if User is logged in
-
-Auth:
-GET "/signup" 					-loads signup page	
-POST "/signup"					-gets data from signup page and creates a user aswell as cookie
-GET "/login"						-loads login page
-POST "/login"						-takes data from user compares it to database and creates cookie
-GET "/logout"						-deletes session cookie
-
-Roads:
-GET "/roads"									-loads all the roads from database and shows them
-GET "/road/:id"								-loads one road by id from database
-GET "/createroute"						-loads create new route page 
-POST "/createroute"						-takes data from create page and adds a new route to 																						database
-GET "/edit-road/:id"					-loads the edit route page with info from database that 																				is changable.
-POST "/edit-road/:id"					- takes changed data from edit route page and applys it 																				to database
-Post "/edit-road/delete/:id"	- deletes the route by Id if delete button is pressed on 																				the edit-route page
+| METHOD | ROUTE                   | DESCRIPTION                                | REQUEST - BODY                                               |
+| ------ | ----------------------- | ------------------------------------------ | :----------------------------------------------------------- |
+| GET    | "/"                     | rendes Homepage (index)                    |                                                              |
+| GET    | "/secret"               | renders dummy secret page                  |                                                              |
+| GET    | "/user/:id"             | renders all roads by user                  |                                                              |
+| GET    | "/signup"               | renders signup page                        |                                                              |
+| POST   | "/signup"               | Sends signup from data to the server       | {userName, password}                                         |
+| GET    | "/login"                | renders login page                         |                                                              |
+| POST   | "/login"                | Sends login from data to the server        | {userName,password}                                          |
+| GET    | "/logout"               | deletes session cookie                     |                                                              |
+| GET    | "/roads"                | rendes all roads from database as partials |                                                              |
+| GET    | "/road/:id"             | renders one road by :id from database      |                                                              |
+| GET    | "/createroute"          | renders create route page                  |                                                              |
+| POST   | "/createroute"          | Sends create road data to server           | {name,description,length(km),length(min),coordinates X, coordinates Y} |
+| GET    | "/edit-road/:id"        | renders edit road page                     |                                                              |
+| POST   | "/edit-road/:id"        | Sends edit road data to server             | {name, description}                                          |
+| POST   | "/edit-road/delete/:id" | Sens delete request to server by Id        | {Object Id}                                                  |
 
 ## Models
-User model:
+#### User model:
+
+```
 const userSchema = new Schema(
   {
     username: {
@@ -63,8 +55,11 @@ const userSchema = new Schema(
     timestamps: true,
   }
 );
+```
 
-Routes model:
+#### Routes model:
+
+```
 const roadSchema = new Schema({
   userID: { type: Schema.Types.ObjectId, ref: "User" },
   userName: { type: String },
@@ -76,6 +71,7 @@ const roadSchema = new Schema({
   imageUrl: { type: String, required: true },
   waypoints: [[{ type: Number }, { type: Number }]],
 });
+```
 
 
 ### Git
@@ -85,7 +81,7 @@ https://perfectvibe.herokuapp.com/
 
 ### Slides
 
-
+https://docs.google.com/presentation/d/11TE_9uadLJgYhSg6c2byuz-Vv6kVml_kmd3b2a2FIdo/edit
 
 ### Contributors
 Giorgi Trapaidze - https://github.com/giorgitrapaidze 
@@ -93,4 +89,3 @@ Giorgi Trapaidze - https://github.com/giorgitrapaidze
 
 Manuel Wegener - https://github.com/heiligerhuegel 
 - https://www.linkedin.com/in/manuelwegener/
-```
