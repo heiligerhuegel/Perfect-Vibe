@@ -5,8 +5,8 @@ A platform to create roadtrips and share those experiences with other users.
 
 ## User Stories
 
-- **404** - Erorr Screen with a message related to the Page.
-- **500** - Erorr Screen with a message related to the Page.
+- **404** - Error Screen with a message related to the Page.
+- **500** - Error Screen with a message related to the Page.
 - **homepage** - Landing page with some nice pictures and slogan aswell as description what the webside is used for.
 - **sign up** - Easy and simple no instructions needed
 - **login** - Easy and simple no instructions needed
