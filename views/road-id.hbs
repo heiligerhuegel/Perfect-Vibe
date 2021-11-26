@@ -41,8 +41,8 @@
 
   const map = new mapboxgl.Map({ 
     container: 'map',
-    style: "mapbox://styles/heiligerhuegel/ckvwgwlvq4wrj14m37krtmygg",
-    //style:'mapbox://styles/mapbox/streets-v11',
+    //style: "mapbox://styles/heiligerhuegel/ckvwgwlvq4wrj14m37krtmygg",
+    style:'mapbox://styles/mapbox/streets-v11',
     center: [({{road.waypoints.[0].[1]}}+{{road.waypoints.[1].[1]}})/2,({{road.waypoints.[0].[0]}}+{{road.waypoints.[1].[0]}})/2], // starting position
     zoom: 0
 });
