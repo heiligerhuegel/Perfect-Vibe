@@ -74,3 +74,11 @@ a img {
   width: 26px;
   height: 26px;
 }
+
+
+
+
+/* IMPORTANT */
+.mapboxgl-ctrl-geocoder ul > li > a {
+  color: black !important;
+}
